@@ -60,8 +60,12 @@ public class MovementController : MonoBehaviour
     {
         var pos = transform.position;
         pos.z = 0;
+        if (pos.y < 0.9)
+        {
+            pos.y = 0.9F;
+        }
         transform.position = pos;
-        transform.rotation = Quaternion.Euler(transform.rotation.x, 120, transform.rotation.z);//TODO: esta rotación funciona con magellan, igual caballero no
+        transform.rotation = Quaternion.Euler(transform.rotation.x, 100, transform.rotation.z);//TODO: esta rotación funciona con magellan, igual caballero no
     }
 
     bool CanMove(float speed)
