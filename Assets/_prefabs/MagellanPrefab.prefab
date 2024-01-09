@@ -183,8 +183,8 @@ MonoBehaviour:
   - {x: -1, y: 1, z: 0}
   - {x: 1, y: 1, z: 0}
   StartRotations:
-  - {x: 0, y: 90, z: 0}
-  - {x: 0, y: -90, z: 0}
+  - {x: 0, y: 120, z: 0}
+  - {x: 0, y: 300, z: 0}
 --- !u!114 &6541338787569911658
 MonoBehaviour:
   m_ObjectHideFlags: 0
