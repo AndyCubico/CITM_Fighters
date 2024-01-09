@@ -11,9 +11,9 @@ public class MovementController : MonoBehaviour
     [SerializeField]
     float SafetyDistance=0.5f;
     // Start is called before the first frame update
-   
 
-    
+    private PlayerController _controller;
+
 
     #region AnimationParamNames
     const string SPEED = "Speed";
@@ -31,6 +31,7 @@ public class MovementController : MonoBehaviour
 
     private void Awake()
     {
+        _controller = GetComponent<PlayerController>();
         _animator = GetComponent<Animator>();
         _id = _playercount++;
     }
@@ -60,7 +61,7 @@ public class MovementController : MonoBehaviour
     {
         var pos = transform.position;
         pos.z = 0;
-        if (pos.y < 0.8)
+        if (pos.y < 0.8 && !_controller.Dead)
         {
             pos.y = 0.9F;
         }
