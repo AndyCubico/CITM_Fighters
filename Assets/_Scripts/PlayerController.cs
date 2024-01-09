@@ -8,10 +8,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     GameObject ImpactPrefab;
- 
+
     // Start is called before the first frame update
-    private bool _isAttacking;
-    private bool _isBlocking;
+    public bool _isAttacking;
+    public bool _isBlocking;
 
     private UpDown UpOrDown;
 
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     const string DIE = "Die";
     const string WIN = "Win";
 
-    
+
 
     #endregion
 
@@ -54,6 +54,14 @@ public class PlayerController : MonoBehaviour
         _id = _playercount++;
     }
 
+    private void Update()
+    {
+        if ((_isAttacking || _isBlocking) && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.99f)
+        {
+            Restart();
+        }
+    }
+
     public void SetOtherPlayer(Transform other)
     {
         _otherPlayer = other;
@@ -65,7 +73,7 @@ public class PlayerController : MonoBehaviour
         UpOrDown = upDown;
     }
 
-   
+
 
     internal void SetBlocking(bool value, UpDown upDown)
     {
@@ -76,43 +84,68 @@ public class PlayerController : MonoBehaviour
     public void TryHighQuickAttack()
     {
         if (CanAttack)
+        {
             _animator.SetTrigger(ATTACK_HIGH_QUICK);
+            SetAtacking(true, UpDown.Up);
+            Debug.Log(_isAttacking);
+        }
     }
     public void TryHighSlowAttack()
     {
         if (CanAttack)
+        {
             _animator.SetTrigger(ATTACK_HIGH_SLOW);
+            SetAtacking(true, UpDown.Up);
+            Debug.Log(_isAttacking);
+        }
     }
     public void TryLowQuickAttack()
     {
         if (CanAttack)
+        {
             _animator.SetTrigger(ATTACK_LOW_QUICK);
+            SetAtacking(true, UpDown.Down);
+            Debug.Log(_isAttacking);
+        }
     }
     public void TryLowSlowAttack()
     {
         if (CanAttack)
+        {
             _animator.SetTrigger(ATTACK_LOW_SLOW);
+            SetAtacking(true, UpDown.Down);
+            Debug.Log(_isAttacking);
+        }
     }
 
     internal void TryHighBlock()
     {
         if (CanBlock)
+        {
             _animator.SetTrigger(BLOCK_HIGH);
+            SetBlocking(true, UpDown.Up);
+            Debug.Log(_isBlocking);
+        }
     }
 
     internal void TryLowBlock()
     {
         if (CanBlock)
+        {
             _animator.SetTrigger(BLOCK_LOW);
+            SetBlocking(true, UpDown.Down);
+            Debug.Log(_isBlocking);
+
+        }
     }
 
 
     public void OnHit(Transform hit)
     {
         var hitBy = hit.root.GetComponent<PlayerController>();
-        if (hitBy.transform == _otherPlayer /*&& hitBy._isAttacking*/)
+        if (hitBy.transform == _otherPlayer && hitBy._isAttacking)
         {
-            if (!_isBlocking || hitBy.UpOrDown!=this.UpOrDown || hitBy.Dead)
+            if (!_isBlocking || hitBy.UpOrDown != this.UpOrDown || hitBy.Dead)
             {
                 Die();
                 hitBy.Win();
@@ -124,11 +157,8 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         _animator.SetTrigger(DIE);
-
-      //  GetComponent<AudioSource>().Play();
+        //  GetComponent<AudioSource>().Play();
         StartCoroutine(DieLater());
-
-
     }
 
     IEnumerator DieLater()
@@ -145,6 +175,20 @@ public class PlayerController : MonoBehaviour
     public void Win()
     {
         _animator.SetTrigger(WIN);
+    }
+
+    void Restart()
+    {
+        if (_isAttacking)
+        {
+            _isAttacking = false;
+            Debug.Log(_isAttacking);
+        }
+        else
+        {
+            _isBlocking = false;
+            Debug.Log(_isBlocking);
+        }
     }
 }
 
