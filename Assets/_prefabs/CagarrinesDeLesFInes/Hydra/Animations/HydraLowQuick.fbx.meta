@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 316ea4b171d781a4ea37030d60e217fd
+guid: 1de67be33e72f944c946b6eaef862bef
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: HydraWin
+      name: LowQuick
       takeName: Take 001
       internalID: 1827226128182048838
       firstFrame: 0
-      lastFrame: 90
+      lastFrame: 45
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
