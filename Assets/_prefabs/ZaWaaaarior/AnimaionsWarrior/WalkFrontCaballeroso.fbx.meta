@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c68c3e1e4f37f248a1dd81eed1a0f91
+guid: bfebaf708f74b2b4d96c34aee04e485c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -36,7 +36,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: WalkFowardWarr
+      name: WalkFrontWarr
       takeName: Take 001
       internalID: 1827226128182048838
       firstFrame: 0
