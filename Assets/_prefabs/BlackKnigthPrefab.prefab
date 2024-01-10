@@ -154,11 +154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartPositions:
-  - {x: -1, y: 1, z: 0}
-  - {x: 1, y: 1, z: 0}
+  - {x: -1, y: 0.9, z: 0}
+  - {x: 1, y: 0.9, z: 0}
   StartRotations:
-  - {x: 0, y: 90, z: 0}
-  - {x: 0, y: 270, z: 0}
+  - {x: 0, y: 120, z: 0}
+  - {x: 0, y: 300, z: 0}
 --- !u!114 &1134946708400605674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,16 +231,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'b_MF_Calf_L'\n\tTransform 'b_MF_Foot_R'\n\tTransform
-    'b_MF_Neck'\n\tTransform 'b_MF_Spine_01'\n\tTransform 'b_MF_Hand_L'\n\tTransform
-    'b_MF_Forearm_L'\n\tTransform 'b_MF_Hand_R'\n\tTransform 'b_MF_Spine_02'\n\tTransform
-    'b_MF_UpperArm_L'\n\tTransform 'b_MF_Head'\n\tand more ...\n\tFrom animation
-    clip 'HighStrongWarr'\n\tFrom animation clip 'DieWarr'\n\tFrom animation clip
-    'WinWarr'\n\tFrom animation clip 'QuickUpWarr'\n\tFrom animation clip 'LowStrongWarr'\n\tFrom
-    animation clip 'LowQuickWarr'\n\tFrom animation clip 'WalkBackWarr'\n\tFrom animation
-    clip 'HighDodgeWryy'\n\tFrom animation clip 'LowDodgeWarr'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0

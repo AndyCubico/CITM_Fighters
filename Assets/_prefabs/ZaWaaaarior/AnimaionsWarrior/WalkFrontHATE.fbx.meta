@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b3575c1b64ebc948874efa70a0bb973
+guid: 5c68c3e1e4f37f248a1dd81eed1a0f91
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -22,12 +22,7 @@ ModelImporter:
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'b_MF_Pelvis' has translation animation
-      that will be discarded.\n\t'b_MF_Pelvis' is inbetween humanoid transforms and
-      has rotation animation that will be discarded.\n\t'b_MF_Calf_R' has translation
-      animation that will be discarded.\n\t'b_MF_Calf_L' has translation animation
-      that will be discarded.\n\t'b_MF_Forearm_L' has translation animation that
-      will be discarded.\n\t'b_MF_Forearm_R' has translation animation that will
-      be discarded.\n"
+      that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -41,11 +36,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: WinWarr
+      name: WalkFrontWarrG
       takeName: Take 001
       internalID: 1827226128182048838
       firstFrame: 0
-      lastFrame: 90
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -59,7 +54,7 @@ ModelImporter:
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 0
-      keepOriginalPositionXZ: 1
+      keepOriginalPositionXZ: 0
       heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
