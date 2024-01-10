@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6357694399268016967}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Hydra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.36115822, y: 0.5404861, z: 2.858575}
-  m_Center: {x: -0.012402341, y: 0.009148915, z: -0.9389593}
+  m_Size: {x: 1.1616999, y: 0.5404861, z: 2.858575}
+  m_Center: {x: -0.009450083, y: 0.009148917, z: -0.9389587}
 --- !u!114 &6357694399268016967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
       propertyPath: m_LocalPosition.x
@@ -118,21 +118,133 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7888846137377628781, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -7776965151522082979, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -7731771692526041830, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -7481836868101245545, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -7254112516537042694, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -6425017537172837004, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -6194880651073532857, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -6089756616344576189, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -5493243507392448358, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -5103037331374454202, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -3069081305084584994, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -2874248731023953292, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -2394091024924762663, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -1750487756926063375, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -1212768912820632058, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -1019174267202137967, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -253317240988824500, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: -42863221372697446, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
       propertyPath: m_Name
       value: HydraPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064121380318372567, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105824590019452049, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239791883128844354, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944300986992108476, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438028804863043568, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281875592901072571, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896756334880703390, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499809969176632171, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
+      objectReference: {fileID: 0}
     - target: {fileID: 8460300517427276001, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8460300517427276001, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8460300517427276001, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129528711440273632, guid: 2a46c8f13a92c904eba77bd2b67df509, type: 3}
+      propertyPath: m_TagString
+      value: Hydra
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

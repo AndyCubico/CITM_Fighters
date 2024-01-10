@@ -41,8 +41,10 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    public Animator hydraAnimator;
     private Animator _animator;
     private Transform _otherPlayer;
+    public bool hydraHit = false;//check if hydra is hitting
 
     static int _playercount;
     int _id;
@@ -95,6 +97,10 @@ public class PlayerController : MonoBehaviour
         if (CanAttack)
         {
             _animator.SetTrigger(ATTACK_HIGH_SLOW);
+            if (hydraAnimator)
+            {
+                hydraAnimator.SetTrigger(ATTACK_HIGH_SLOW);
+            }
             SetAtacking(true, UpDown.Up);
             Debug.Log(_isAttacking);
         }
@@ -104,6 +110,10 @@ public class PlayerController : MonoBehaviour
         if (CanAttack)
         {
             _animator.SetTrigger(ATTACK_LOW_QUICK);
+            if (hydraAnimator)
+            {
+                hydraAnimator.SetTrigger(ATTACK_LOW_QUICK);
+            }
             SetAtacking(true, UpDown.Down);
             Debug.Log(_isAttacking);
         }
@@ -113,6 +123,10 @@ public class PlayerController : MonoBehaviour
         if (CanAttack)
         {
             _animator.SetTrigger(ATTACK_LOW_SLOW);
+            if (hydraAnimator)
+            {
+                hydraAnimator.SetTrigger(ATTACK_LOW_SLOW);
+            }
             SetAtacking(true, UpDown.Down);
             Debug.Log(_isAttacking);
         }
@@ -143,7 +157,7 @@ public class PlayerController : MonoBehaviour
     public void OnHit(Transform hit)
     {
         var hitBy = hit.root.GetComponent<PlayerController>();
-        if (hitBy.transform == _otherPlayer && hitBy._isAttacking)
+        if ((hitBy.transform == _otherPlayer || hydraHit)&& hitBy._isAttacking)
         {
             if (!_isBlocking || hitBy.UpOrDown != this.UpOrDown || hitBy.Dead)
             {
@@ -151,6 +165,7 @@ public class PlayerController : MonoBehaviour
                 hitBy.Win();
                 Instantiate(ImpactPrefab, hit.position, Quaternion.identity);
             }
+            hydraHit = false;
         }
     }
 
@@ -175,6 +190,10 @@ public class PlayerController : MonoBehaviour
     public void Win()
     {
         _animator.SetTrigger(WIN);
+        if (hydraAnimator)
+        {
+            hydraAnimator.SetTrigger(WIN);
+        }
     }
 
     void Restart()

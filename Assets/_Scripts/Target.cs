@@ -12,6 +12,10 @@ public class Target : MonoBehaviour
         if (attack != null)
         {
             Debug.Log(other.name);
+            if (other.gameObject.CompareTag("Hydra"))
+            {
+                GetComponentInParent<PlayerController>().hydraHit = true;
+            }
             GetComponentInParent<PlayerController>().OnHit(other.transform);
         }
             

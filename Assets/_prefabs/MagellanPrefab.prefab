@@ -202,6 +202,7 @@ MonoBehaviour:
   ImpactPrefab: {fileID: 100004, guid: a89abc0d2591545288f4c041059ae633, type: 3}
   _isAttacking: 0
   _isBlocking: 0
+  hydraAnimator: {fileID: 4199155875456860935}
 --- !u!114 &1575106425152864472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,5 +480,10 @@ PrefabInstance:
 --- !u!4 &53530404377017961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5903629150300978689, guid: 5eb7bb9653e23274ebc693cadf64e462, type: 3}
+  m_PrefabInstance: {fileID: 5860250674239340648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4199155875456860935 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7716263705874154351, guid: 5eb7bb9653e23274ebc693cadf64e462, type: 3}
   m_PrefabInstance: {fileID: 5860250674239340648}
   m_PrefabAsset: {fileID: 0}
