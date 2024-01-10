@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlackKnigthPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba7665b75bb982444adee0dbe804e4ab, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2513002816076019239, guid: ba7665b75bb982444adee0dbe804e4ab, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -110,6 +114,8 @@ MonoBehaviour:
   ImpactPrefab: {fileID: 100002, guid: 847f669bc75db4de8be28dc6dc55874d, type: 3}
   _isAttacking: 0
   _isBlocking: 0
+  hydraAnimator: {fileID: 0}
+  hydraHit: 0
 --- !u!114 &7346122923541153180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,8 +128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c0a9a24b51e134e8535f7e81cfdfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPositions: []
-  StartRotations: []
+  StartPositions:
+  - {x: -1, y: 1, z: 0}
+  - {x: 1, y: 1, z: 0}
+  StartRotations:
+  - {x: 0, y: 120, z: 0}
+  - {x: 0, y: 300, z: 0}
 --- !u!114 &1134946708400605674
 MonoBehaviour:
   m_ObjectHideFlags: 0

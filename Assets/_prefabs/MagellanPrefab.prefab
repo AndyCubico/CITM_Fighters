@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagellanPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5ac0afa7bfcca6749a0c200aaa1c7b3b, type: 3}
+      propertyPath: m_TagString
+      value: Player1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -203,6 +207,7 @@ MonoBehaviour:
   _isAttacking: 0
   _isBlocking: 0
   hydraAnimator: {fileID: 4199155875456860935}
+  hydraHit: 0
 --- !u!114 &1575106425152864472
 MonoBehaviour:
   m_ObjectHideFlags: 0
