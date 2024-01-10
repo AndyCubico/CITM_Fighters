@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba7665b75bb982444adee0dbe804e4ab, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba7665b75bb982444adee0dbe804e4ab, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba7665b75bb982444adee0dbe804e4ab, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba7665b75bb982444adee0dbe804e4ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ba7665b75bb982444adee0dbe804e4ab, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 2513002816076019239, guid: ba7665b75bb982444adee0dbe804e4ab, type: 3}
       propertyPath: m_Enabled
@@ -148,8 +148,8 @@ MonoBehaviour:
   - {x: -1, y: 1, z: 0}
   - {x: 1, y: 1, z: 0}
   StartRotations:
-  - {x: 0, y: 120, z: 0}
-  - {x: 0, y: 300, z: 0}
+  - {x: 0, y: 90, z: 0}
+  - {x: 0, y: 270, z: 0}
 --- !u!114 &1134946708400605674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveLimits: {x: -5, y: 5}
-  SafetyDistance: 0.5
+  SafetyDistance: 1
 --- !u!95 &7220892225328023197
 Animator:
   serializedVersion: 5
