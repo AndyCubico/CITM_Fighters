@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
     public void OnHit(Transform hit)
     {
         var hitBy = hit.root.GetComponent<PlayerController>();
-        if (hitBy.transform == _otherPlayer && ( hitBy._isAttacking || hydraHit))
+        if (hitBy.transform == _otherPlayer && (hitBy._isAttacking || hydraHit))
         {
             if (!_isBlocking || hitBy.UpOrDown != this.UpOrDown || hitBy.Dead)
             {
