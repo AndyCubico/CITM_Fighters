@@ -147,7 +147,7 @@ MonoBehaviour:
   movementClip: {fileID: 0}
   attackQuickLow: {fileID: 8300000, guid: 66944b4e4b34a0f4e8985f0727a624df, type: 3}
   attackHighSlow: {fileID: 8300000, guid: 66944b4e4b34a0f4e8985f0727a624df, type: 3}
-  win: {fileID: 8300000, guid: c9b043cc6c15e2a418a8f5a305bc5466, type: 3}
+  win: {fileID: 8300000, guid: 3a74b22bbeed63342853897b94eaf87c, type: 3}
   die: {fileID: 8300000, guid: f7b481b4c74b67d44aa2ddd85634010c, type: 3}
   attackQuick: {fileID: 8300000, guid: 66944b4e4b34a0f4e8985f0727a624df, type: 3}
   hitClip: {fileID: 8300000, guid: f7b481b4c74b67d44aa2ddd85634010c, type: 3}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveLimits: {x: -5, y: 5}
   SafetyDistance: 1
-  moveAudio: {fileID: 8300000, guid: c9b043cc6c15e2a418a8f5a305bc5466, type: 3}
+  animMagellan: {fileID: 0}
 --- !u!95 &7220892225328023197
 Animator:
   serializedVersion: 5
@@ -259,7 +259,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
