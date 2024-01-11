@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
         _otherPlayer = other;
     }
 
-    internal void SetAtacking(bool value, UpDown upDown)
+    internal void SetAttacking(bool value, UpDown upDown)
     {
         _isAttacking = value;
         UpOrDown = upDown;
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
             //play audio
             _audio.clip = attackQuick;
             _audio.PlayDelayed(0.0f);
-            SetAtacking(true, UpDown.Up);
+            SetAttacking(true, UpDown.Up);
             Debug.Log(_isAttacking);
         }
     }
@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
                 _audio.PlayDelayed(0.0f);//pon delay si quieres
             }
              
-            SetAtacking(true, UpDown.Up);
+            SetAttacking(true, UpDown.Up);
             Debug.Log(_isAttacking);
         }
     }
@@ -137,15 +137,16 @@ public class PlayerController : MonoBehaviour
         if (CanAttack)
         {
             _animator.SetTrigger(ATTACK_LOW_QUICK);
+            SetAttacking(true, UpDown.Down);
             if (hydraAnimator)
             {
                 hydraAnimator.SetTrigger(ATTACK_LOW_QUICK);
+                SetAttacking(false, UpDown.Down);
             }
             //play audio
             _audio.clip = attackQuickLow;
             _audio.PlayDelayed(0.0f);
             StartCoroutine(FadeOut(_audio, 1.3f, startVolume));
-            SetAtacking(true, UpDown.Down);
             Debug.Log(_isAttacking);
         }
     }
@@ -167,7 +168,7 @@ public class PlayerController : MonoBehaviour
             {
                 _audio.PlayDelayed(0.0f);
             }
-            SetAtacking(true, UpDown.Down);
+            SetAttacking(true, UpDown.Down);
             Debug.Log(_isAttacking);
         }
     }
@@ -197,7 +198,7 @@ public class PlayerController : MonoBehaviour
     public void OnHit(Transform hit)
     {
         var hitBy = hit.root.GetComponent<PlayerController>();
-        if (hitBy.transform == _otherPlayer && (hitBy._isAttacking || hydraHit) && !_dead)
+        if (hitBy.transform == _otherPlayer && (hitBy._isAttacking || hydraHit) && !_dead && !hitBy._dead)
         {
             //play audio
             _audio.clip = hitClip;

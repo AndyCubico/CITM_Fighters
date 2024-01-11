@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartPositions:
-  - {x: -1, y: 1, z: 0}
+  - {x: -2, y: 1, z: 0}
   - {x: 1, y: 1, z: 0}
   StartRotations:
   - {x: 0, y: 120, z: 0}
