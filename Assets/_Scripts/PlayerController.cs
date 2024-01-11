@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     GameObject ImpactPrefab;
 
     // Start is called before the first frame update
-    public bool _isAttacking;
-    public bool _isBlocking;
+    private bool _isAttacking;
+    private bool _isBlocking;
 
     private UpDown UpOrDown;
 
@@ -43,8 +43,20 @@ public class PlayerController : MonoBehaviour
 
     public Animator hydraAnimator;
     private Animator _animator;
+    private AudioSource _audio;
     private Transform _otherPlayer;
     public bool hydraHit = false;//check if hydra is hitting
+
+    //Ataques magellan
+    public float startVolume;
+    public AudioClip attackLowSlow;
+    public AudioClip movementClip;
+    public AudioClip attackQuickLow;
+    public AudioClip attackHighSlow;
+    public AudioClip win;
+    public AudioClip die;
+    public AudioClip attackQuick;
+    public AudioClip hitClip;
 
     static int _playercount;
     int _id;
@@ -53,6 +65,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _audio = GetComponent<AudioSource>();
+        startVolume = _audio.volume;
         _id = _playercount++;
     }
 
@@ -88,6 +102,9 @@ public class PlayerController : MonoBehaviour
         if (CanAttack)
         {
             _animator.SetTrigger(ATTACK_HIGH_QUICK);
+            //play audio
+            _audio.clip = attackQuick;
+            _audio.PlayDelayed(0.0f);
             SetAtacking(true, UpDown.Up);
             Debug.Log(_isAttacking);
         }
@@ -97,10 +114,20 @@ public class PlayerController : MonoBehaviour
         if (CanAttack)
         {
             _animator.SetTrigger(ATTACK_HIGH_SLOW);
+            //play audio
+            _audio.clip = attackHighSlow;
+
             if (hydraAnimator)
             {
                 hydraAnimator.SetTrigger(ATTACK_HIGH_SLOW);
+                _audio.PlayDelayed(0.0f);
+                StartCoroutine(FadeOut(_audio, 1.5f, startVolume));
             }
+            else
+            {
+                _audio.PlayDelayed(0.0f);//pon delay si quieres
+            }
+             
             SetAtacking(true, UpDown.Up);
             Debug.Log(_isAttacking);
         }
@@ -114,6 +141,10 @@ public class PlayerController : MonoBehaviour
             {
                 hydraAnimator.SetTrigger(ATTACK_LOW_QUICK);
             }
+            //play audio
+            _audio.clip = attackQuickLow;
+            _audio.PlayDelayed(0.0f);
+            StartCoroutine(FadeOut(_audio, 1.3f, startVolume));
             SetAtacking(true, UpDown.Down);
             Debug.Log(_isAttacking);
         }
@@ -123,9 +154,18 @@ public class PlayerController : MonoBehaviour
         if (CanAttack)
         {
             _animator.SetTrigger(ATTACK_LOW_SLOW);
+            //play audio
+            _audio.clip = attackLowSlow;
+
             if (hydraAnimator)
             {
                 hydraAnimator.SetTrigger(ATTACK_LOW_SLOW);
+                _audio.PlayDelayed(0.2f);
+                StartCoroutine(FadeOut(_audio, 1.7f, startVolume));
+            }
+            else
+            {
+                _audio.PlayDelayed(0.0f);
             }
             SetAtacking(true, UpDown.Down);
             Debug.Log(_isAttacking);
@@ -157,8 +197,11 @@ public class PlayerController : MonoBehaviour
     public void OnHit(Transform hit)
     {
         var hitBy = hit.root.GetComponent<PlayerController>();
-        if (hitBy.transform == _otherPlayer && (hitBy._isAttacking || hydraHit))
+        if (hitBy.transform == _otherPlayer && (hitBy._isAttacking || hydraHit) && !_dead)
         {
+            //play audio
+            _audio.clip = hitClip;
+            _audio.PlayDelayed(0.0f);
             if (!_isBlocking || hitBy.UpOrDown != this.UpOrDown || hitBy.Dead)
             {
                 Die();
@@ -172,7 +215,9 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         _animator.SetTrigger(DIE);
-        //  GetComponent<AudioSource>().Play();
+        //play audio
+        _audio.clip = die;
+        _audio.PlayDelayed(0.5f);
         StartCoroutine(DieLater());
     }
 
@@ -190,6 +235,12 @@ public class PlayerController : MonoBehaviour
     public void Win()
     {
         _animator.SetTrigger(WIN);
+        //play audio
+        StopAllCoroutines();
+        StopAudio();//arreglito feo
+        _audio.volume = startVolume;
+        _audio.clip = win;
+        _audio.PlayDelayed(0.2f);
         if (hydraAnimator)
         {
             hydraAnimator.SetTrigger(WIN);
@@ -209,6 +260,31 @@ public class PlayerController : MonoBehaviour
             Debug.Log(_isBlocking);
         }
     }
+    public void PlayForTime(float time)
+    {
+        _audio.Play();
+        Invoke("StopAudio", time);
+    }
+
+    private void StopAudio()
+    {
+        _audio.Stop();
+        _audio.volume = startVolume;
+    }
+
+    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime, float startVol)
+    {
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVol * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVol;
+    }
 }
 
 public enum UpDown
@@ -216,3 +292,4 @@ public enum UpDown
     Up,
     Down
 }
+
