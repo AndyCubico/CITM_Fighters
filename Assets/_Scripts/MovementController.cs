@@ -13,7 +13,7 @@ public class MovementController : MonoBehaviour
     // Start is called before the first frame update
 
     private PlayerController _controller;
-
+    public Animator animMagellan;
 
     #region AnimationParamNames
     const string SPEED = "Speed";
@@ -61,7 +61,7 @@ public class MovementController : MonoBehaviour
     {
         var pos = transform.position;
         pos.z = 0;
-        if (pos.y < 0.8 && !_controller.Dead)
+        if (pos.y < 0.8 && !_controller.Dead && animMagellan)
         {
             pos.y = 0.9F;
         }
